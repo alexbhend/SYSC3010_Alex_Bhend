@@ -1,6 +1,6 @@
 ## Code used is from www.iotdesignpro.com
 
-import http.client
+import httplib
 import urllib
 import time
 key = "7C8703QIH8OGVOP1"  # Put your API Key here
@@ -8,9 +8,9 @@ def thermometer():
     while True:
         #Calculate CPU temperature of Raspberry Pi in Degrees C
         temp = int(open('/sys/class/thermal/thermal_zone0/temp').read()) / 1e3 # Get Raspberry Pi CPU temp
-        params = urllib.parse.urlencode({'field1': temp, 'key':key }) 
+        params = urllib.urlencode({'field1': temp, 'key':key }) 
         headers = {"Content-typZZe": "application/x-www-form-urlencoded","Accept": "text/plain"}
-        conn = http.client.HTTPConnection("api.thingspeak.com:80")
+        conn = httplib.HTTPConnection("api.thingspeak.com:80")
         try:
             conn.request("POST", "/update", params, headers)
             response = conn.getresponse()
