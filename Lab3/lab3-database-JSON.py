@@ -6,7 +6,7 @@ import sqlite3
 # The URL that is formatted: http://api.openweathermap.org/data/2.5/weather?APPID=a808bbf30202728efca23e099a4eecc7&units=imperial&q=ottawa
 
 
-dbconnect = sqlite3.connect("lab3database.db");
+dbconnect = sqlite3.connect("lab3dbpt2.db");
 
 dbconnect.row_factory = sqlite3.Row;
 
