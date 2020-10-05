@@ -50,9 +50,8 @@ while True:
       for event in events:
         if event.action != 'pressed':
           continue
-        if event.direction == 'up': //turn led on
-          s.set_pixels(images[0])
-          
-        if event.direction == 'down': //turn led off
+        if event.direction == 'up':
+          s.set_pixels(images[0]) 
+        if event.direction == 'down':
           s.set_pixels(images[1])
             
